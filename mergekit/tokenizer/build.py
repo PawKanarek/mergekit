@@ -52,7 +52,7 @@ def get_stripped_tokenizer(
     Strips any tokens with indices >= model.vocab_size.
     """
     tokenizer = transformers.AutoTokenizer.from_pretrained(
-        path.path,
+        "Xenova/gpt-4",
         revision=path.revision,
         trust_remote_code=trust_remote_code,
         use_fast=True,

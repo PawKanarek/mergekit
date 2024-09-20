@@ -218,15 +218,15 @@ def _copy_tokenizer(
 
         return
 
-    # fallback: try actually loading the tokenizer and saving it
-    logging.info(f"Reserializing tokenizer from {donor_model}")
-    tokenizer = transformers.AutoTokenizer.from_pretrained(
-        donor_model.model.path,
-        revision=donor_model.model.revision,
-        trust_remote_code=trust_remote_code,
-    )
-    _set_chat_template(tokenizer, merge_config)
-    tokenizer.save_pretrained(out_path, safe_serialization=True)
+    # # fallback: try actually loading the tokenizer and saving it
+    # logging.info(f"Reserializing tokenizer from {donor_model}")
+    # tokenizer = transformers.AutoTokenizer.from_pretrained(
+    #     donor_model.model.path,
+    #     revision=donor_model.model.revision,
+    #     trust_remote_code=trust_remote_code,
+    # )
+    # _set_chat_template(tokenizer, merge_config)
+    # tokenizer.save_pretrained(out_path, safe_serialization=True)
 
 
 def _model_out_config(
